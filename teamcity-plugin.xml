@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teamcity-plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:schemas-jetbrains-com:teamcity-plugin-v1-xml">
+  <info>
+    <name>gerrit-commit-status-publisher</name>
+    <display-name>gerrit-commit-status-publisher</display-name>
+    <version>@Version@</version>
+    <description>CallFire version for the gerrit status publisher</description>
+    <download-url>https://callfire.com/ui</download-url>
+    <email>inekrashevych@callfire.com</email>
+    <vendor>
+      <name>@VendorName@</name>
+      <url>@VendorURL@</url>
+      <logo>Plugin vendor logo URL</logo>
+    </vendor>
+  </info>
+  <deployment use-separate-classloader="true" />
+</teamcity-plugin>

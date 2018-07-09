@@ -1,0 +1,23 @@
+*.class
+
+**/dependency-reduced-pom.xml
+
+# Eclipse #
+*.classpath
+*.project
+*.settings
+.metadata
+
+# intellij
+.idea
+**/*.iml
+
+# Maven #
+target
+
+
+# Package Files #
+*.jar
+*.war
+*.ear
+/logs
