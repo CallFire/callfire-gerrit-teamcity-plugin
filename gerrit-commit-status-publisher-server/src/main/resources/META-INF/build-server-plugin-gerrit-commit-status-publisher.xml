@@ -9,10 +9,11 @@
         <bean id="voterSettingsController" class="com.callfire.teamcity.plugin.gerrit.PublisherSettingsController"/>
         <bean class="com.callfire.teamcity.plugin.gerrit.CommitStatusPublisherFeatureController"/>
         <bean class="com.callfire.teamcity.plugin.gerrit.PublisherManager"/>
-
         <bean class="com.callfire.teamcity.plugin.gerrit.GerritSettings"/>
         <bean class="com.callfire.teamcity.plugin.gerrit.GerritClientImpl"/>
         <bean class="com.callfire.teamcity.plugin.gerrit.ServerListener">
             <constructor-arg index="0" ref="configActionsDispatcher"/>
         </bean>
+
+        <bean class="com.callfire.teamcity.plugin.gerrit.summary.BuildSummaryLinkExtension"/>
 </beans>
