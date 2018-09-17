@@ -64,6 +64,10 @@ class GerritPublisher extends BaseCommitStatusPublisher {
       );
       return true;
     } catch (Exception e) {
+      if (e.getMessage().contains("closed change")) {
+        // closed review
+        return true;
+      }
       throw new PublisherException("Cannot publish status to Gerrit for VCS root " +
               revision.getRoot().getName() + ": " + e.toString(), e);
     }

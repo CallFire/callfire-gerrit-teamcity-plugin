@@ -1,4 +1,3 @@
-
  TeamCity server-side plugin
 
  This is CallFire team city gerrit plugin that posts stuff into gerrit
