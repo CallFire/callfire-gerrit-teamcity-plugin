@@ -38,7 +38,7 @@ public class GerritClientImpl extends GerritClientBase implements GerritClient {
   public String runCommand(@NotNull GerritConnectionDetails connectionDetails, @NotNull String command) throws JSchException, IOException {
     ChannelExec channel = null;
     Session session = null;
-    String out = null;
+    String out;
     try {
       JSch jsch = new JSch();
       addKeys(jsch, connectionDetails.getProject(), connectionDetails.getKeyId());
