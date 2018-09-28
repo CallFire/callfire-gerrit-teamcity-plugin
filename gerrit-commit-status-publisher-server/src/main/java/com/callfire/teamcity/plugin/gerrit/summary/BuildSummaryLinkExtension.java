@@ -20,6 +20,8 @@ import jetbrains.buildServer.web.openapi.WebControllerManager;
 
 public class BuildSummaryLinkExtension extends SimplePageExtension {
     public static final String GERRIT_LINK = "gerrit.link";
+    public static final String SONAR_LINK = "sonar.link";
+    public static final String SONAR_PROJECT_KEY = "sonar.project.key";
     @NotNull private final SBuildServer myServer;
 
     public BuildSummaryLinkExtension(@NotNull WebControllerManager manager,
@@ -40,6 +42,10 @@ public class BuildSummaryLinkExtension extends SimplePageExtension {
         String gerritLink = build.getParametersProvider().get(GERRIT_LINK);
         Branch branch = build.getBranch();
         model.put("gerrit_url", gerritLink + substringAfter(branch.getName(), "/"));
+        if (StringUtils.isNotBlank(build.getParametersProvider().get(SONAR_PROJECT_KEY))) {
+            model.put("sonar_url", build.getParametersProvider().get(SONAR_LINK) + "dashboard?id=" + build.getParametersProvider()
+                    .get(SONAR_PROJECT_KEY));
+        }
         super.fillModel(model, request);
     }
 
